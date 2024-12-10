@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class Sorting
+{
+    private: int i,j,temp,n,a[88];
+    public: void display()
+            {
+                cout<<"Enter the value of n:"<<endl;
+                cin>>n;
+                cout<<"Enter "<<n<<" elements"<<endl;
+                for(i=0;i<n;i++)
+                {
+                    cin>>a[i];
+                }
+                for(i=0;i<n-1;i++)
+                {
+                    for(j=0;j<n-i-1;j++)
+                    {
+                        if(a[j]>a[j+1])
+                        {
+                            temp=a[j];
+                            a[j]=a[j+1];
+                            a[j+1]=temp;
+                        }
+                    }
+                }
+                cout<<"The elements of the array after sorting in ascending order: "<<endl;
+                for(i=0;i<n;i++)
+                {
+                    cout<<a[i]<<"  "<<endl;
+                }
+                for(i=0;i<n-1;i++)
+                {
+                    for(j=0;j<n-i-1;j++)
+                    {
+                        if(a[j]<a[j+1])
+                        {
+                            temp=a[j];
+                            a[j]=a[j+1];
+                            a[j+1]=temp;
+                        }
+                    }
+                }
+                cout<<"The elements of the array after sorting in descending order: "<<endl;
+                for(i=0;i<n;i++)
+                {
+                    cout<<a[i]<<"  "<<endl;
+                }
+
+            }
+};
+int main()
+{
+    Sorting o;
+    o.display();
+    return 0;
+}
